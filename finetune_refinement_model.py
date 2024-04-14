@@ -375,7 +375,7 @@ def main():
         model = model.to(torch.float32)
 
         tokenizer = sample.create_custom_gpt2_tokenizer()
-        tokenizer.pad_token = 50256
+        tokenizer.pad_token = "<pad>"
         if model_args.parallelize:
             model.parallelize()
         else:
